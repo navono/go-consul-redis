@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// UpdateTTL is update the service TTL
 func (s *Service) UpdateTTL(check func() (bool, error)) {
 	ticker := time.NewTicker(s.TTL / 2)
 	for range ticker.C {

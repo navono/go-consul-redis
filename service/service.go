@@ -7,7 +7,7 @@ import (
 	consul "github.com/hashicorp/consul/api"
 )
 
-// Service for web
+// Service for service type
 type Service struct {
 	Name        string
 	TTL         time.Duration
@@ -15,6 +15,7 @@ type Service struct {
 	ConsulAgent *consul.Agent
 }
 
+// New returns a new Service instance
 func New(addrs []string, ttl time.Duration) (*Service, error) {
 	s := new(Service)
 	s.Name = "webkv"

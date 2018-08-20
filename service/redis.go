@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// ServeHTTP is a http handler
 func (s *Service) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	status := 200
 
@@ -22,6 +23,7 @@ func (s *Service) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		r.URL, r.RemoteAddr, key, status)
 }
 
+// Check returns the redis status
 func (s *Service) Check() (bool, error) {
 	_, err := s.RedisClient.Ping().Result()
 	if err != nil {
