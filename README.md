@@ -12,7 +12,7 @@
 3. 启动本程序
 > go run .\main.go -addrs '192.168.56.101:6379' -port 8888
 
-# verfify
+# verify
 在`Redis`中增加值：
 > set test 1234
 
