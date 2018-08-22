@@ -18,10 +18,11 @@ type Service struct {
 // New returns a new Service instance
 func New(addrs []string, ttl time.Duration) (*Service, error) {
 	s := new(Service)
-	s.Name = "webkv"
+	s.Name = "web"
 	s.TTL = ttl
 	s.RedisClient = redis.NewUniversalClient(&redis.UniversalOptions{
-		Addrs: addrs,
+		Addrs:    addrs,
+		Password: "1234",
 	})
 
 	ok, err := s.Check()
@@ -29,7 +30,9 @@ func New(addrs []string, ttl time.Duration) (*Service, error) {
 		return nil, err
 	}
 
-	c, err := consul.NewClient(consul.DefaultConfig())
+	cfg := consul.DefaultConfig()
+	cfg.Address = "192.168.56.101:8500"
+	c, err := consul.NewClient(cfg)
 	if err != nil {
 		return nil, err
 	}
