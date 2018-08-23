@@ -10,7 +10,7 @@
 > sudo systemctl start redis
 
 3. 启动本程序
-> go run .\main.go -addrs '192.168.56.101:6379' -port 8888
+> go run .\main.go -addrs '192.168.56.101:6379' -port 8888 -ttl '5s'
 
 # verify
 在`Redis`中增加值：
