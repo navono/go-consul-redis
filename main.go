@@ -28,7 +28,7 @@ func main() {
 
 	addrs := strings.Split(*addrStr, ";")
 
-	s, err := service.New(addrs, *ttl)
+	s, err := service.New(addrs, *ttl, *port)
 	if err != nil {
 		log.Fatal(err)
 	}
