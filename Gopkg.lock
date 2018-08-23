@@ -76,8 +76,8 @@
     "prometheus",
     "prometheus/promhttp"
   ]
-  revision = "c5b7fccd204277076155f10851dad72b76a49317"
-  version = "v0.8.0"
+  revision = "967789050ba94deca04a5e84cce8ad472ce313c1"
+  version = "v0.9.0-pre1"
 
 [[projects]]
   branch = "master"
@@ -109,6 +109,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "463641475cd422c824047bd6f8f983f65c9ef789e95172ca4011ff8e53a428a4"
+  inputs-digest = "27a6cc5610705cc62bc6c6936cce4a66a276fb041229f183140532da4da93377"
   solver-name = "gps-cdcl"
   solver-version = 1
