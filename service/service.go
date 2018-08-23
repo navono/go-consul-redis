@@ -40,6 +40,7 @@ func New(addrs []string, ttl time.Duration) (*Service, error) {
 
 	serviceDef := &consul.AgentServiceRegistration{
 		Name: s.Name,
+		Port: 8888,
 		Check: &consul.AgentServiceCheck{
 			TTL: s.TTL.String(),
 		},

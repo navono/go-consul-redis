@@ -10,6 +10,8 @@ import (
 	"time"
 
 	"github.com/navono/go-consul/service"
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func main() {
@@ -30,7 +32,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	http.Handle("/", s)
+	http.Handle("/", prometheus.InstrumentHandler("web", s))
+	http.Handle("/metrics", promhttp.Handler())
 
 	l := fmt.Sprintf(":%d", *port)
 	log.Print("Listening on ", l)

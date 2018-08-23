@@ -18,3 +18,6 @@
 
 获取值：
 > curl http://localhost:8888/test
+
+# reference
+[blog](https://alex.dzyoba.com/blog/go-prometheus-service/)
